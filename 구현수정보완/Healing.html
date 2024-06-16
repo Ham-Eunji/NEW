@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name = "author" contents= "Ham-eunji">
+
+    <!-- 초기화 스타일시트 -->
+    <link rel="stylesheet" href="css/reset.css">
+
+    <title>cute animal</title>
+    
+    <!-- 폰트어썸 연결 -->
+    <script src="https://kit.fontawesome.com/0e96825dc0.js" crossorigin="anonymous"></script>
+        
+    <!-- 제이쿼리 연결 -->
+    <script src="js/jquery-3.71.min.js"></script>
+    <script>
+        $(function()
+        {
+            /* 헤더 호버 > 숨어있던 메뉴 나옴 */
+            $('header').hover(
+                function(){$('nav').slideDown()},
+                function(){$('nav').slideUp()}
+            );
+
+            /* 헤더에 나온 메뉴를 클릭 > 동영상 교체 */
+            $('main>video:nth-of-type(2)').hide();
+            $('main>video:nth-of-type(3)').hide();
+            $('main>video:nth-of-type(4)').hide();
+
+            $('nav ul li:nth-of-type(1)').click(function()
+            {
+                $('main>video').hide()
+                $('main>video:nth-of-type(1)').show()
+            });
+
+            $('nav ul li:nth-of-type(2)').click(function()
+            {
+                $('main>video').hide()
+                $('main>video:nth-of-type(2)').show()
+            });
+
+            $('nav ul li:nth-of-type(3)').click(function()
+            {
+                $('main>video').hide()
+                $('main>video:nth-of-type(3)').show()
+            });
+
+            $('nav ul li:nth-of-type(4)').click(function()
+            {
+                $('main>video').hide()
+                $('main>video:nth-of-type(4)').show()
+            });
+        });
+    </script>
+
+    <style>
+        /****** 폰트 - 제목용 ******/
+        @font-face {font-family: 'LOTTERIACHAB';
+                    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/LOTTERIACHAB.woff2') format('woff2');
+                    font-weight: normal;
+                    font-style: normal;}
+        /****** 폰트 - 본문용 ******/
+        @font-face {font-family: 'KCC-Ganpan';
+                    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2') format('woff2');
+                    font-weight: normal;
+                    font-style: normal;}
+
+
+        /****** 전체 설정 ******/
+        * {margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+           scroll-behavior: smooth;}
+
+        a {text-decoration: none;
+           color: rgb(255, 153, 0);}
+
+        #wrap {width: 100%;
+               height: 100vh;
+               background: rgb(255, 255, 201);
+               margin: 0 auto;}
+
+        /****** header 영역 ******/
+        header {margin: 0 auto;
+                width: 90%;
+                height: 180px;
+                background: white;
+                text-align: center;
+                box-shadow: 0px 5px 10px rgba(207, 207, 0, 0.281);
+                border-bottom-left-radius: 50px;
+                border-bottom-right-radius: 50px;
+                position: relative;}
+
+        header>i {color: rgb(255, 153, 0);
+                  opacity: 50%;
+                  position: absolute;
+                  top: 150px;
+                  left: 50%;
+                  animation: pointer 5s infinite;}
+
+        header p:nth-of-type(1) {color: rgb(255, 153, 0);
+                                 font-family: 'LOTTERIACHAB';
+                                 font-size: 3rem;
+                                 line-height: 100px;}
+        header p:nth-of-type(2) {color: rgb(255, 153, 0);
+                                 text-align: center;
+                                 font-family: 'KCC-Ganpan';
+                                 position: absolute;
+                                 top: 80px;
+                                 left: 44%;
+                                 opacity: 50%;}
+
+        nav {text-align: center;
+             display: hide;}        
+        nav ul {list-style: none;
+                position: absolute;
+                right: 80px;
+                top: 110px;}
+        nav ul li {display: inline-block;
+                   background:rgb(255, 255, 129);
+                   padding: 10px;
+                   box-shadow: 0px 3px 5px rgba(153, 153, 0, 0.349);
+                   border-radius: 40px;
+                   font-family: 'KCC-Ganpan';
+                   color: rgb(255, 153, 0);}
+        nav ul li:nth-of-type(1) i{color: white;}
+        nav ul li:nth-of-type(2) i{color: black;}
+        nav ul li:nth-of-type(3) i{color: brown;}
+        nav ul li:nth-of-type(4) i{color: black;}
+        nav ul li:nth-of-type(1):hover i{color: rgb(255, 153, 0);}
+        nav ul li:hover {background: white;}
+
+        /****** main 영역 ******/
+        main {width: 100%;
+              text-align: center;
+              margin-top: 50px;
+              margin-bottom: 50px;
+              padding: 10PX;
+              display: flex;
+              flex-flow: column nowrap;
+              align-items: center;}
+
+        main video {box-shadow: 0px 5px 10px rgba(207, 207, 0, 0.281);
+                    border-radius: 40px;
+                    width: 900px;
+                    max-width: 100%;
+                    margin: 15px;}
+
+
+        /****** footer 영역 ******/
+        footer {text-align: center;
+                font-family: 'KCC-Ganpan';
+                font-weight: bold;
+                color: rgb(255, 153, 0);}
+
+
+        @keyframes pointer
+        {
+            0% {opacity: 0;}
+            30% {opacity: 1;}
+            90% {transform: translatey(-50px)}            
+            100% {opacity: 0;}
+
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+
+        <header>
+            <p>귀여운 동물영상</p>        
+            <i class="fa-solid fa-arrow-pointer"></i>
+            <P>마우스를 올려 영상을 골라봐요!</P>
+            <nav>
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-cat"></i>
+                        <a href="#">흰냥이</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-cat"></i>
+                        <a href="#">깜냥이</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-dog"></i>
+                        <a href="#">갈멍이</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-dog"></i>
+                        <a href="#">깜멍이</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <video src="img/cat_-_39009 (540p).mp4" autoplay muted loop></video>
+            <video src="img/cat_-_65438 (720p).mp4" autoplay muted loop></video>
+            <video src="img/dog_-_77626 (360p).mp4" autoplay muted loop></video>
+            <video src="img/red_shar_pei_-_9492 (540p).mp4" autoplay muted loop></video>
+        </main>
+
+        <footer>
+            <p>귀여운 동물이라도 보자!</p>
+        </footer>
+    </div>
+</body>
+</html>
