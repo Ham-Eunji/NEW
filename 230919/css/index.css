@@ -1,0 +1,101 @@
+        /* 
+        #wrap 포지션 픽스, 동영상 크게 배치
+        #rotate 포지션 앱솔루트 활용하여 화면의 정 가운데로 보내기
+                애니메이션 적용
+        article(8개의 상자) 포지션 앱솔루드, 각각 색상 적용
+        */
+        * {margin: 0;
+            padding: 0;
+            box-sizing: border-box;}
+ 
+         /* 배경 설정 */
+         #wrap {width: 100%;
+                height: 100vh;
+                position: fixed;
+                left: 0;
+                top: 0;
+                perspective: 1300px;}
+ 
+         #wrap > video {width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        opacity: 0.5;}
+ 
+         /* 큰 상자 설정 */
+         #rotate {width: 600px;
+                  height: 800px;
+                  position: absolute; /* 가운데로 보내는 공식 */
+                  left: 50%;
+                  top: 50%;
+                  margin-left: -300px;
+                  margin-top: -400px;
+                  animation: ani 30s linear infinite;
+                  transform-style: preserve-3d;}
+ 
+         /* 아티클 설정 */
+         #rotate article {width: 100%;
+                          height: 100%;
+                          position: absolute;
+                          left: 0;
+                          top: 0;
+                          backface-visibility: hidden;
+                          background: rgba(255, 255, 255, 0.3);}
+         #rotate article:hover {border: 3px solid white;}
+ 
+         article.box1 {transform: rotateY(0deg) translateZ(-764px);}
+ 
+         article.box2 {transform: rotateY(45deg) translateZ(-764px);}
+ 
+         article.box3 {transform: rotateY(90deg) translateZ(-764px);}
+ 
+         article.box4 {transform: rotateY(135deg) translateZ(-764px);}
+ 
+         article.box5 {transform: rotateY(180deg) translateZ(-764px);}
+ 
+         article.box6 {transform: rotateY(225deg) translateZ(-764px);}
+ 
+         article.box7 {transform: rotateY(270deg) translateZ(-764px);}
+ 
+         article.box8 {transform: rotateY(315deg) translateZ(-764px);}
+ 
+         /* 
+         팁 : 8개의 상자가 rotate 상자를 중심으로 둥글게 배치되어야 함
+              360도 나누기 갯수, 45도 
+              600*8/2/3.14 =  -764 >>> z축 이동값
+         */
+ 
+         @keyframes ani
+         {
+             0% {transform: rotateY(0deg);}
+             100% {transform: rotateY(360deg);}
+         }
+
+        /* 박스 내부 설정 */
+        article {position: relative;}
+        article h1 {position: absolute;
+                    left: 0;
+                    top: 15px;
+                    opacity: 0;
+                    transition: 0.5s;
+                    color: white;}
+        article:hover h1 {top: -60px;
+                          opacity: 1;
+                          text-shadow: 0px 0px 15px gray;}    
+        article:hover .inner {border: 0.5px solid white;}
+
+        .inner {width: 100%;
+                height: 100%;}
+
+        /* 1번 상자 */
+        .box1 .inner div {width: 250px;
+                          height: 250px;
+                          padding: 5px;
+                          margin-left: 22px;
+                          margin-top: 17px;
+                          float: left;
+                          text-align: center;
+                          color: white;}
+        .box1 .inner div p {font-size: 100px;}
+        .box1 .inner div:hover {transform: scale(1.2);
+                                text-shadow: 0px 0px 15px gray;}
+        .box1 div h2 {margin-top: 10px;}

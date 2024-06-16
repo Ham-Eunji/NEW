@@ -1,0 +1,81 @@
+* {margin: 0;
+    padding: 0;
+    box-sizing: border-box;}
+
+ a {text-decoration: none;
+    color: gray;}
+
+ .profileA {background: #e6fcff;}
+ .profileB {background: rgba(183, 255, 225, 0.39);}
+ .profileC {background: rgba(255, 214, 253, 0.384);}
+ .profileD {background: rgba(197, 153, 255, 0.479);}
+
+ body {font-family: 'Libre Baskerville', serif;
+       font-family: 'Orbitron', sans-serif;
+       font-family: 'Patua One', cursive;}
+ #main1, #main2, #main3, #main4{margin: 10% auto;
+                                background: white;
+                                width: 400px;
+                                height: 800px;
+                                box-shadow: 5px 5px 30px rgb(189, 189, 189);
+                                border-radius: 10px;
+                                text-align: center;
+                                position: relative;}
+                                
+
+ .btn1 {position: absolute;
+        left: 20px;
+        top: 20px;}
+ .btn2 {position: absolute;
+        right: 20px;
+        top: 20px;}
+ 
+ .profile {width: 250px;
+           height: 250px;
+           position: absolute;
+           left: 20%;
+           top: 10%;
+           border-radius: 50%;}
+
+ .introduce {position:absolute;
+             top: 370px;
+             left: 80px;}
+ .introduce>p {color: gray;}
+
+ .btn3 {position: absolute;
+        width: 350px;
+        height: 70px;
+        border-radius: 50px;
+        top: 500px;
+        left: 25px;
+        line-height: 70px;
+        color: white;}
+
+ .mylink {position: absolute;
+          top: 600px;
+          left: 100px;}
+
+ .btn4 {margin-bottom: 30px;
+        border-bottom: 1px solid gray;}
+
+ .others {position: absolute;
+          left: 35%;
+          bottom: 10%;}
+ .others a {display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            opacity: 0.4;
+            filter: saturate(0.4);} 
+
+ .others a.on {opacity: 1;
+               filter: saturate(1);}  
+
+ .others a:first-child {background: rgb(4, 0, 255);
+                        box-shadow: 5px 5px 5px rgba(17, 0, 255, 0.5);}             
+ .others a:nth-child(2) {background: yellow;
+                         box-shadow: 5px 5px 5px rgba(255, 255, 0, 0.5);}             
+ .others a:nth-child(3) {background: rgb(255, 0, 242);
+                         box-shadow: 5px 5px 5px rgba(255, 0, 200, 0.5);}             
+ .others a:last-child {background: rgb(162, 0, 255);
+                       box-shadow: 5px 5px 5px rgba(153, 0, 255, 0.5);}             
